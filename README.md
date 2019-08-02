@@ -41,3 +41,5 @@
 
 - [AsciiDoc 语法快速参考（中文版）](https://asciidoctor.cn/docs/asciidoc-syntax-quick-reference/)
 - [AsciiDoc 官网](https://asciidoctor.org/)
+- [asciidoctor-gradle-plugin](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
+- [Asciidoctor PDF Theming Guide](https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc)

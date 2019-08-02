@@ -32,6 +32,11 @@
 - data/themes/KaiGenGothicCN-theme.yml： PDF theme 配置
 - build.gradle： gradle 配置
 
+## 生成文件样例
+
+- [index.html](https://someok.github.io/asciidoctor-gradle-example/)
+- [index.pdf](https://someok.github.io/asciidoctor-gradle-example/index.pdf)
+
 ## 参考
 
 - [AsciiDoc 语法快速参考（中文版）](https://asciidoctor.cn/docs/asciidoc-syntax-quick-reference/)

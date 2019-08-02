@@ -1,3 +1,11 @@
+.asciidoctor gradle example 生成示例文件说明
+****
+项目地址： https://github.com/someok/asciidoctor-gradle-example[@GitHub]
+
+* 生成 HTML5 文件，本文件即是
+* 生成 PDF 文件： https://someok.github.io/asciidoctor-gradle-example/index.pdf[index.pdf]
+****
+
 This is my boss, Jonathan Hart, a self-made millionaire, he's quite a guy. This is Mrs H., she's gorgeous, she's one lady who knows how to take care of herself. By the way, my name is Max. I take care of both of them, which ain't easy, 'cause when they met it was MURDER!
 
 Ten years ago a crack commando unit was sent to prison by a military court for a crime they didn't commit. These men promptly escaped from a maximum security stockade to the Los Angeles underground. Today, still wanted by the government, they survive as soldiers of fortune. If you have a problem and no one else can help, and if you can find them, maybe you can hire the A-team.

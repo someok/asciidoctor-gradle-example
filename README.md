@@ -43,3 +43,5 @@
 - [AsciiDoc 官网](https://asciidoctor.org/)
 - [asciidoctor-gradle-plugin](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
 - [Asciidoctor PDF Theming Guide](https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc)
+- [思源黑体的变体怀源黑体](https://github.com/minjiex/kaigen-gothic)
+- [怀源黑体的斜体来源](https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases/tag/v0.1.0-fonts)

@@ -28,7 +28,7 @@
 
 - src/docs/asciidoc/index.adoc： 示例文档
 - src/docs/asciidoc/docinfo.html： 自定义生成的 HTML5 head，增加了 `favicon`
-- data/fonts：提供 `思源黑体` 和 `Mono` 两种中英文字体，用于生成 PDF 时候不乱吗
+- data/fonts：提供 `思源黑体` 和 `Mono` 两种中英文字体，用于生成 PDF 时候不乱码
 - data/themes/KaiGenGothicCN-theme.yml： PDF theme 配置
 - build.gradle： gradle 配置
 

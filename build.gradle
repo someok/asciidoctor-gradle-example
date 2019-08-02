@@ -1,0 +1,104 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+
+        jcenter()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.asciidoctor.jvm.convert" version "2.3.0"
+    id "org.asciidoctor.jvm.pdf" version "2.3.0"
+}
+
+allprojects {
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "https://dl.bintray.com/someok/maven" }
+        jcenter()
+    }
+
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+version = '1.0.0'
+
+asciidoctor {
+    logDocuments true
+
+    sources {
+        include 'index.adoc'
+    }
+    baseDirFollowsSourceDir()
+
+    // 强制每次都重新生成
+    outputs.upToDateWhen { false }
+    outputOptions {
+//         backends = ['html5']
+        backends = ['html5', 'pdf']
+    }
+
+     attributes 'pdf-fontsdir': file('data/fonts')
+     attributes 'pdf-stylesdir': file('data/themes')
+     attributes 'pdf-style': 'KaiGenGothicCN'
+
+     // 版本号
+//     attributes 'revnumber': project.version
+
+    // 一些通用属性
+    attributes 'toc': 'left'
+    attributes 'toclevels': 4
+    attributes 'toc-title': '目录'
+
+//     attributes 'linkcss': true
+//     attributes 'stylesdir': 'css/'
+//     attributes 'stylesheet': 'asciidoctor.css'
+    attributes 'docinfo1': ''
+    attributes 'imagesdir': 'images'
+
+    // 语法高亮，可选项有 coderay, highlightjs, prettify, pygments
+    // 为保证生成的 html5 和 pdf 均有语法高亮，所以启用 coderay
+    // 使用其它几个选项还需要做不少额外的工作，没有必要
+    attributes 'source-highlighter': 'coderay'
+    attributes 'sectnums': true
+    attributes 'sectanchors': true
+    attributes 'sectlinks': true
+    attributes 'experimental': true
+
+
+    // TIP、NOTE 之类的用字体图标显示
+    // 之所以将此属性放置在这儿是为了避免 idea asciidoc 插件无法正常显示
+    attributes 'icons': 'font'
+
+}
+/*
+
+asciidoctorPdf {
+    pdfThemes {
+        local 'KaiGenGothicCN', {
+            styleDir = file('data/themes')
+//             styleName = 'KaiGenGothicCN'
+        }
+
+        local 'custom', {
+            styleDir = file('data/themes')
+            //             styleName = 'KaiGenGothicCN'
+        }
+    }
+
+    fontsDir file('data/fonts')
+    theme 'custom'
+
+                println fontsDir
+                println stylesDir
+                println styleName
+                println attributes
+
+}
+*/

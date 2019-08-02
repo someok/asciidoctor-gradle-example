@@ -1,0 +1,47 @@
+= asciidoctor gradle 示例
+Firstname Lastname <author@asciidoctor.org>
+
+//
+// build.gradle 中其实已经配置了下属这些属性，之所以在这儿又配置一遍，
+// 主要是为了在 WebStorm、vscode 之类的编辑器中方便用统一样式预览，
+// 如果没有预览方面的需求，也完全可以把重复的属性删除。
+//
+:toc: left
+:toc-title: 目录
+:toclevels: 3
+:source-highlighter: coderay
+
+:imagesdir: images
+:icons: font
+
+:sectnums:
+:sectanchors:
+:sectlinks:
+:experimental:
+
+:quick-uri: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+
+[#overview]
+== 概述
+include::chapter/概述.adoc[]
+
+<<<
+
+[#content-en]
+== 内容模板：英文版
+include::chapter/content-en.adoc[]
+
+<<<
+
+[#content-cn]
+== 内容模板：中文版
+include::chapter/content-cn.adoc[]
+
+<<<
+
+[#appendix]
+== 附录
+
+[#appendix-1]
+=== 版本历史
+include::chapter/版本历史.adoc[]

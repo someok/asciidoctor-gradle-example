@@ -1,0 +1,123 @@
+
+Content entered directly below the header but before the first section heading is called the preamble.
+
+主标题之下，二级标题区域之上的内容称之为序言。主标题之下，二级标题区域之上的内容称之为序言。
+主标题之下，二级标题区域之上的内容称之为序言。主标题之下，二级标题区域之上的内容称之为序言。
+主标题之下，二级标题区域之上的内容称之为序言。主标题之下，二级标题区域之上的内容称之为序言。
+主标题之下，二级标题区域之上的内容称之为序言。主标题之下，二级标题区域之上的内容称之为序言。
+
+=== 内容区一级标题
+
+This is a paragraph with a *bold* word and an _italicized_ word.
+
+段落示例：这是一个 *粗体字*，这是一个 _斜体字_
+
+.图片说明
+image::logo.png[这是图片的 alt 说明.]
+
+This is another paragraph.footnote:[I am footnote text and will be rendered at the bottom of the article.]
+
+这是一个段落脚注.footnote:[我是一个中文脚注，并且在 html 中会显示在页面底部。]
+
+==== 内容区二级标题
+
+.Unordered list title 无序列表
+* list item 1 列表 1
+** nested list item 次级列表 1
+*** nested nested list item 1 次级列表 1-1
+*** nested nested list item 2 次级列表 1-2
+* list item 2 列表 2
+
+This is a paragraph.
+
+这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。
+
+这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。这又是一个段落。
+
+.Example block title 示例区块
+====
+Content in an example block is subject to normal substitutions.
+
+这是一个示例区块。
+====
+
+.Sidebar title 旁白内容
+****
+Sidebars contain aside text and are subject to normal substitutions.
+
+额，翻译成旁白好像挺别扭，反正就是很醒目。
+****
+
+[#content-cn-3]
+===== 内容区三级标题
+
+[[id-for-listing-block-cn]]
+.Listing block title 清单区块
+----
+Content in a listing block is subject to verbatim substitutions.
+Listing block content is commonly used to preserve code input.
+
+相比上面的示例区块，这儿的内容稍微不那么醒目，类似 code 的效果。
+----
+
+====== 内容区四级标题
+
+.Table title 表格
+|===
+|Column heading 1 表头 1|Column heading 2 表头 2
+
+|Column 1, row 1 第一行第一列
+|Column 2, row 1 第一行第二列
+
+|Column 1, row 2 第二行第一列
+|Column 2, row 2 第二行第二列
+|===
+
+====== 内容区四级标题 2
+
+[quote, firstname lastname 人名, movie title 标题]
+____
+I am a block quote or a prose excerpt.
+I am subject to normal substitutions.
+
+引用内容，会在下方显示人名、标题之类的内容。
+____
+
+[verse, firstname lastname, poem title and more]
+____
+I am a verse block.
+  Indents and endlines are preserved in verse blocks.
+
+诗句效果
+  缩进可以保持住。
+____
+
+=== 内容区一级标题 2
+
+TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+
+TIP: 五种警示标签: Tip, Note, Important, Caution and Warning.
+
+[TIP]
+====
+多行警示可以这么写。多行警示可以这么写。多行警示可以这么写。
+
+多行警示可以这么写。多行警示可以这么写。多行警示可以这么写。
+====
+
+// I am a comment and won't be rendered.
+
+. ordered list item 有序列表 1
+.. nested ordered list item 次级列表 1
+. ordered list item 有序列表 2
+
+The text at the end of this sentence is cross referenced to <<_third_level_heading,the third level heading>>
+
+这儿演示的是内部跳转方式： <<content-cn-3,内容区三级标题>>
+
+=== 内容区一级标题 3
+
+链接示例 http://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual].
+
+attribute 中定义的常量演示： {quick-uri}[which links this text to the Asciidoctor Quick Reference Guide].
+

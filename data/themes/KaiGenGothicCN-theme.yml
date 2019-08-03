@@ -1,17 +1,17 @@
 font:
     catalog:
-        KaiGen Gothic CN:
+        ChineseFonts:
             normal: KaiGenGothicCN-Regular.ttf
             bold: KaiGenGothicCN-Bold.ttf
             italic: KaiGenGothicCN-Regular-Italic.ttf
             bold_italic: KaiGenGothicCN-Bold-Italic.ttf
-        Roboto Mono:
+        Monospace:
             normal: RobotoMono-Regular.ttf
             bold: RobotoMono-Bold.ttf
             italic: RobotoMono-Italic.ttf
             bold_italic: RobotoMono-BoldItalic.ttf
     fallbacks:
-        - KaiGen Gothic CN
+        - ChineseFonts
 
 page:
     background_color: ffffff
@@ -31,7 +31,7 @@ base:
     # color as CMYK array (approximated)
     #font_color: [0, 0, 0, 0.92]
     #font_color: [0, 0, 0, 92%]
-    font_family: KaiGen Gothic CN
+    font_family: ChineseFonts
     # choose one of these font_size/line_height_length combinations
     #font_size: 14
     #line_height_length: 20
@@ -65,7 +65,7 @@ link:
 # literal is currently used for inline monospaced in prose and table cells
 literal:
     font_color: b12146
-    font_family: Roboto Mono
+    font_family: Monospace
 menu_caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
 heading:
     align: left

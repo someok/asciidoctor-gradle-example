@@ -46,7 +46,10 @@ asciidoctor {
 
      attributes 'pdf-fontsdir': file('data/fonts')
      attributes 'pdf-stylesdir': file('data/themes')
-     attributes 'pdf-style': 'KaiGenGothicCN'
+     // 思源黑体
+//      attributes 'pdf-style': 'KaiGenGothicCN'
+     // 思源宋体
+     attributes 'pdf-style': 'SourceHanSerifCN'
 
      // 版本号
 //     attributes 'revnumber': project.version

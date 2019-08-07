@@ -66,23 +66,9 @@ asciidoctor {
     outputs.upToDateWhen { false }
     outputOptions {
         backends = ['html5']
-//         backends = ['html5', 'pdf']
     }
 
-//      attributes 'pdf-fontsdir': file('data/fonts')
-//      attributes 'pdf-stylesdir': file('data/themes')
-     // 思源黑体
-//      attributes 'pdf-style': 'KaiGenGothicCN'
-     // 思源宋体
-//      attributes 'pdf-style': 'SourceHanSerifCN'
-
-     // 版本号
-//     attributes 'revnumber': project.version
-
-    // 一些通用属性
-    attributes 'toc': 'left'
-    attributes 'toc-title': '目录'
-
+//  下述几个属性可将 css 从内嵌到 html5 页面改为外联的 css 文件
 //     attributes 'linkcss': true
 //     attributes 'stylesdir': 'css/'
 //     attributes 'stylesheet': 'asciidoctor.css'

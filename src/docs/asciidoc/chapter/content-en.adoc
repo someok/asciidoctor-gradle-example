@@ -51,6 +51,9 @@ Listing block content is commonly used to preserve code input.
 
 |Column 1, row 2
 |Column 2, row 2
+
+|Column 1, row 2
+|Column 2, row 2
 |===
 
 ====== Fifth level heading

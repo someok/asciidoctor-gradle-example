@@ -71,6 +71,9 @@ Listing block content is commonly used to preserve code input.
 
 |Column 1, row 2 第二行第一列
 |Column 2, row 2 第二行第二列
+
+|Column 1, row 2 第二行第一列
+|Column 2, row 2 第二行第二列
 |===
 
 ====== 内容区四级标题 2

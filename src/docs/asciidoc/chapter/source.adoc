@@ -1,0 +1,83 @@
+[source,javascript]
+----
+/*
+ * Created by wjx on 2018/2/11.
+ */
+import React, {Component} from 'react';
+import {View, NetInfo} from 'react-native';
+import {MessageBar, MessageBarManager} from 'react-native-message-bar';
+import Orientation from 'react-native-orientation';
+
+import AppNavigator from './AppNavigator';
+import AppLoopAction from './AppLoopAction';
+
+import {isValidConnection} from '../util/NetInfoUtils';
+import {initSDK} from '../util/UMengUtils';
+import {registerApp} from '../util/WechatUtils';
+/**
+ * 应用顶级容器。
+ */
+export default class AppContainer extends Component {
+    componentDidMount() {
+        MessageBarManager.registerMessageBar(this.messageBar);
+
+        NetInfo.addEventListener('connectionChange', this.onConnectivityChange);
+
+        // 锁定屏幕方向
+        Orientation.lockToPortrait();
+
+        // 友盟初始化
+        initSDK();
+
+        // 微信SDK 初始化
+        registerApp().catch(e => {
+            console.log('registerApp', e);
+        });
+    }
+
+    componentWillUnmount() {
+        MessageBarManager.unregisterMessageBar();
+
+        NetInfo.removeEventListener('connectionChange', this.onConnectivityChange);
+    }
+
+    onConnectivityChange = (info) => {
+        const {type} = info;
+
+        if (!isValidConnection(type)) {
+            this.showWarnAlert('警告', '当前网络无法正常连接');
+        } else {
+            MessageBarManager.hideAlert();
+        }
+
+    };
+
+    showWarnAlert = (title, message) => {
+        MessageBarManager.showAlert({
+            position: 'bottom',
+            alertType: 'error',
+            shouldHideAfterDelay: false,
+            title,
+            message,
+        });
+
+    };
+
+    render() {
+        return (
+            <View style={{flex: 1}}>
+                <AppNavigator/>
+
+                <AppLoopAction/>
+
+                <MessageBar
+                    ref={bar => {
+                        this.messageBar = bar;
+                    }}
+                />
+            </View>
+        );
+    }
+}
+
+----

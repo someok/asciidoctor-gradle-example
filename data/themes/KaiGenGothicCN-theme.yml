@@ -16,6 +16,7 @@ font:
 page:
     background_color: ffffff
     layout: portrait
+    initial_zoom: FitH
     # margin: [0.5in, 0.67in, 0.67in, 0.67in]
     margin: [1in, 1in, 1in, 1in]
     # margin_inner and margin_outer keys are used for recto/verso print margins when media=prepress
@@ -53,6 +54,11 @@ base:
     border_color: eeeeee
     border_radius: 4
     border_width: 0.5
+role:
+    big:
+        font_size: $base_font_size_large
+    small:
+        font_size: $base_font_size_small
 # FIXME vertical_rhythm is weird; we should think in terms of ems
 #vertical_rhythm: $base_line_height_length * 2 / 3
 # correct line height for Noto Serif metrics (comes with built-in line height)
@@ -66,7 +72,19 @@ link:
 literal:
     font_color: b12146
     font_family: Monospace
-menu_caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
+button:
+    content: "[\u2009%s\u2009]"
+    font_style: bold
+key:
+    background_color: f5f5f5
+    border_color: cccccc
+    border_offset: 1.5
+    border_radius: 2
+    border_width: 0.375
+    font_family: $literal_font_family
+    separator: "\u202f+\u202f"
+menu:
+    caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
 heading:
     align: left
     #font_color: 181818
@@ -156,7 +174,7 @@ blockquote:
 code:
     font_color: $base_font_color
     font_family: $literal_font_family
-    font_size: ceil($base_font_size)
+    font_size: ceil($base_font_size_small)
     padding: $code_font_size
     line_height: 1.25
     # line_gap is an experimental property to control how a background color is applied to an inline block element
@@ -170,6 +188,7 @@ conum:
     font_color: $literal_font_color
     font_size: $base_font_size
     line_height: 4 / 3
+    glyphs: circled
 example:
     border_color: $base_border_color
     border_radius: $base_border_radius
@@ -228,8 +247,9 @@ toc:
         #content: ". "
         font_color: a9a9a9
         #levels: 2 3
-
-# NOTE in addition to footer, header is also supported
+footnotes:
+    font_size: round($base_font_size * 0.75)
+    item_spacing: $outline_list_item_spacing / 2
 header:
     font_size: $base_font_size_small
     height: 0.75in

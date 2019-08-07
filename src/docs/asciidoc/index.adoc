@@ -8,7 +8,7 @@ Firstname Lastname <author@asciidoctor.org>
 //
 :toc: left
 :toc-title: 目录
-:toclevels: 3
+:toclevels: 4
 :source-highlighter: coderay
 
 :imagesdir: images
@@ -36,6 +36,12 @@ include::chapter/content-en.adoc[]
 [#content-cn]
 == 内容模板：中文版
 include::chapter/content-cn.adoc[]
+
+<<<
+
+[#src]
+== 源码示例
+include::chapter/source.adoc[]
 
 <<<
 

@@ -20,11 +20,6 @@
 上述目标通过 [asciidoctor-gradle-plugin](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
 编译 asciidoc 文档实现，配置过程中虽然坑不少——例如 PDF 中文问题——不过解决之后写起文档来还是很顺畅的。
 
-编译也很简单，一行语句：
-```bash
-./gradlew asciidoctor
-```
-
 ## 项目说明
 
 - src/docs/asciidoc/index.adoc： 示例文档
@@ -34,10 +29,115 @@
 - data/themes/SourceHanSerifCN-theme.yml： PDF theme 配置：思源宋体版
 - build.gradle： gradle 配置
 
+## 编译命令
+
+### 生成 `HTML5`
+```bash
+./gradlew asciidoctor
+```
+
+### 生成 `PDF`
+```bash
+./gradlew asciidoctorPdf
+```
+
 ## 生成文件样例
 
 - [index.html](https://someok.github.io/asciidoctor-gradle-example/)
 - [index.pdf](https://someok.github.io/asciidoctor-gradle-example/index.pdf)
+
+## 关于 PDF
+
+生成 PDF 的方式有两种，各有利弊。
+
+### `asciidoctor` 配合 PDF `attributes`
+ 
+直接在 `asciidoctor` 中配置如下 `attributes`
+- attributes 'pdf-fontsdir': file('data/fonts')
+- attributes 'pdf-stylesdir': file('data/themes')
+- attributes 'pdf-style': 'SourceHanSerifCN'
+
+优势：
+
+- 可以直接一个命令生成 `html5`、`pdf` 两种格式文件
+- PDF 封面生成正常
+
+缺陷：
+
+- pdf theme 配置 yaml 文件中无法使用 `extends` 属性实现配置继承
+
+示例如下：
+```groovy
+asciidoctor {
+    logDocuments true
+
+    sources {
+        include 'index.adoc'
+    }
+    baseDirFollowsSourceDir()
+
+    // 强制每次都重新生成
+    outputs.upToDateWhen { false }
+    outputOptions {
+        backends = ['html5', 'pdf']
+    }
+
+    attributes 'pdf-fontsdir': file('data/fonts')
+    attributes 'pdf-stylesdir': file('data/themes')
+     // 思源黑体
+    //      attributes 'pdf-style': 'KaiGenGothicCN'
+    // 思源宋体
+    attributes 'pdf-style': 'SourceHanSerifCN'
+
+    // 一些通用属性
+    attributes 'toc': 'left'
+    attributes 'toc-title': '目录'
+}
+```
+
+### 使用 `pdfThemes` 配合 `asciidoctorPdf`
+
+- pdfThemes：用于定义 PDF theme
+- asciidoctorPdf：配置 PDF 相关属性
+
+优势：
+
+- PDF theme yaml 配置支持 `extends` 属性
+- 更符合新版 `asciidoctor-gradle-plugin` 的要求
+
+缺陷：
+
+- 当前配置下封面无法正常生成
+- 需要在 `asciidoctorj.modules` 中配置 `pdf.version` 为 `1.5.0-beta.2`
+
+示例如下：
+
+```groovy
+pdfThemes {
+    local 'KaiGenGothicCN', {
+        styleDir = file('data/themes')
+        styleName = 'KaiGenGothicCN'
+    }
+
+    local 'SourceHanSerifCN', {
+        styleDir = file('data/themes')
+        styleName = 'SourceHanSerifCN'
+    }
+}
+
+asciidoctorPdf {
+    logDocuments true
+
+    sources {
+        include 'index.adoc'
+    }
+    baseDirFollowsSourceDir()
+
+    fontsDir file('data/fonts')
+    theme 'SourceHanSerifCN'
+}
+
+```
 
 ## 字体生成方式补充说明
 
@@ -53,13 +153,6 @@
 - 直接用参数调用：
    > /Applications/FontForge.app/Contents/MacOS/FontForge -script convert_italic.pe SourceHanSerifCN-Bold.ttf
 
-之后在 `build.gradle` 中切换配置即可：
-```gradle
-// 思源黑体
-// attributes 'pdf-style': 'KaiGenGothicCN'
-// 思源宋体
-attributes 'pdf-style': 'SourceHanSerifCN'
-```
 
 ## 参考
 

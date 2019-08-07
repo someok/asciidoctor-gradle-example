@@ -10,8 +10,10 @@ buildscript {
 }
 
 plugins {
-    id "org.asciidoctor.jvm.convert" version "2.3.0"
-    id "org.asciidoctor.jvm.pdf" version "2.3.0"
+//     id "org.asciidoctor.jvm.convert" version "2.3.0"
+//     id "org.asciidoctor.jvm.pdf" version "2.3.0"
+    id "org.asciidoctor.jvm.convert" version "3.0.0-alpha.3"
+    id "org.asciidoctor.jvm.pdf" version "3.0.0-alpha.3"
 }
 
 allprojects {
@@ -39,19 +41,32 @@ asciidoctorj {
     options doctype: 'book'
     // 或 attributes 'title-page': true
 
+    attributes 'lang': 'zh-Hans-CN'
+
     attributes 'toc': 'left'
     attributes 'toclevels': 4
     attributes 'toc-title': '目录'
+
+    attributes 'appendix-caption': '附录'
+
     attributes 'imagesdir': 'images'
 
      // TIP、NOTE 之类的用字体图标显示
-    // 之所以将此属性放置在这儿是为了避免 idea asciidoc 插件无法正常显示
     attributes 'icons': 'font'
+    attributes 'icon-set': 'fas'
 
     // 语法高亮，可选项有 coderay, highlightjs, prettify, pygments
     // 为保证生成的 html5 和 pdf 均有语法高亮，所以启用 coderay
     // 使用其它几个选项还需要做不少额外的工作，没有必要
     attributes 'source-highlighter': 'coderay'
+
+    // 去掉 pdf 目录上标题的默认前缀「Chapter」
+    attributes 'chapter-label': ''
+    attributes 'sectnums': true
+    attributes 'sectanchors': true
+    attributes 'sectlinks': true
+    attributes 'experimental': true
+
 }
 
 asciidoctor {

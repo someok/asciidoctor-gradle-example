@@ -45,9 +45,7 @@ include::chapter/source.adoc[]
 
 <<<
 
-[#appendix]
-== 附录
-
+[appendix]
 [#appendix-1]
-=== 版本历史
+== 版本历史
 include::chapter/版本历史.adoc[]

@@ -60,11 +60,10 @@
 优势：
 
 - 可以直接一个命令生成 `html5`、`pdf` 两种格式文件
-- PDF 封面生成正常
 
 缺陷：
 
-- pdf theme 配置 yaml 文件中无法使用 `extends` 属性实现配置继承
+- pdf theme 配置 yaml 文件中无法使用 `extends` 属性实现配置继承，参见 [issue 442](https://github.com/asciidoctor/asciidoctor-gradle-plugin/issues/442)
 
 示例如下：
 ```groovy
@@ -107,8 +106,8 @@ asciidoctor {
 
 缺陷：
 
-- 当前配置下封面无法正常生成
-- 需要在 `asciidoctorj.modules` 中配置 `pdf.version` 为 `1.5.0-beta.2`
+- 无法通过 `asciidoctor` 一个命令生成两种格式输出
+- 配置更加复杂
 
 示例如下：
 
@@ -159,6 +158,7 @@ asciidoctorPdf {
 - [AsciiDoc 语法快速参考（中文版）](https://asciidoctor.cn/docs/asciidoc-syntax-quick-reference/)
 - [AsciiDoc 官网](https://asciidoctor.org/)
 - [asciidoctor-gradle-plugin](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
+- [Asciidoctor Gradle Plugin User Guide](https://asciidoctor.github.io/asciidoctor-gradle-plugin/development-2.0/user-guide/)
 - [Asciidoctor PDF Theming Guide](https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc)
 - [思源黑体的变体怀源黑体](https://github.com/minjiex/kaigen-gothic)
 - [怀源黑体的斜体来源](https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases/tag/v0.1.0-fonts)

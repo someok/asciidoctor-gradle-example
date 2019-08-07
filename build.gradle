@@ -61,7 +61,7 @@ asciidoctorj {
     attributes 'source-highlighter': 'coderay'
 
     // 去掉 pdf 目录上标题的默认前缀「Chapter」
-    attributes 'chapter-label': ''
+    attributes 'chapter-label': false
     attributes 'sectnums': true
     attributes 'sectanchors': true
     attributes 'sectlinks': true

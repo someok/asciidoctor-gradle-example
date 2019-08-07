@@ -141,7 +141,7 @@ asciidoctorPdf {
 ## 字体生成方式补充说明
 
 [思源黑体的变体怀源黑体](https://github.com/minjiex/kaigen-gothic)
-往上已经有提供了，不过「思源宋体的斜体」尚未找到，所以用 [FontForge](http://fontforge.github.io/en-US/)
+网上已经有提供了，不过「思源宋体的斜体」尚未找到，所以用 [FontForge](http://fontforge.github.io/en-US/)
 来做转换。
 
 转换脚本参见 [convert_italic.pe](./bin/convert_italic.pe)

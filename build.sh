@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-./gradlew asciidoctor
+./gradlew generateAll

@@ -1,4 +1,4 @@
-# asciidoctor gradle example
+# Asciidoctor Gradle Example
 
-- [Generate HTML 5](example.html)
-- [Generate PDF](example.pdf)
+- [Generated HTML 5](example.html)
+- [Generated PDF](example.pdf)

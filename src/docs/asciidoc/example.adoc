@@ -1,19 +1,19 @@
 = asciidoctor gradle 示例
 Firstname Lastname <author@asciidoctor.org>
-
-//
-// build.gradle 中其实已经配置了下属这些属性，之所以在这儿又配置一遍，
-// 主要是为了在 WebStorm、vscode 之类的编辑器中方便用统一样式预览，
-// 如果没有预览方面的需求，也完全可以把重复的属性删除。
-//
+:title-logo-image: image::logo.png[]
 :toc: left
 :toc-title: 目录
 :toclevels: 4
 :source-highlighter: coderay
-
 :imagesdir: images
+:docinfodir: meta
+:docinfo: shared
 :icons: font
-
+:icon-set: fas
+:lang: zh-Hans-CN
+:chapter-label:
+:appendix-caption: 附录
+:title-page:
 :sectnums:
 :sectanchors:
 :sectlinks:

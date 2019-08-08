@@ -1,3 +1,7 @@
+.idea/*
 .gradle/
-.idea/
 build/
+
+!.idea/runConfigurations/
+!.idea/gradle.xml
+!.idea/vcs.xml

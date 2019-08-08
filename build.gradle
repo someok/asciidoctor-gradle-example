@@ -38,22 +38,22 @@ asciidoctorj {
     }
 
     // 生成 pdf 封面
-    options doctype: 'book'
+//    options doctype: 'book'
     // 或 attributes 'title-page': true
 
-    attributes 'lang': 'zh-Hans-CN'
+//    attributes 'lang': 'zh-Hans-CN'
 
-    attributes 'toc': 'left'
-    attributes 'toclevels': 4
-    attributes 'toc-title': '目录'
+//    attributes 'toc': 'left'
+//    attributes 'toclevels': 4
+//    attributes 'toc-title': '目录'
 
-    attributes 'appendix-caption': '附录'
+//    attributes 'appendix-caption': '附录'
 
-    attributes 'imagesdir': 'images'
+//    attributes 'imagesdir': 'images'
 
      // TIP、NOTE 之类的用字体图标显示
-    attributes 'icons': 'font'
-    attributes 'icon-set': 'fas'
+//    attributes 'icons': 'font'
+//    attributes 'icon-set': 'fas'
 
     // 语法高亮，可选项有 coderay, highlightjs, prettify, pygments
     // 为保证生成的 html5 和 pdf 均有语法高亮，所以启用 coderay
@@ -61,11 +61,11 @@ asciidoctorj {
     attributes 'source-highlighter': 'coderay'
 
     // 去掉 pdf 目录上标题的默认前缀「Chapter」
-    attributes 'chapter-label': ''
-    attributes 'sectnums': true
-    attributes 'sectanchors': true
-    attributes 'sectlinks': true
-    attributes 'experimental': true
+//    attributes 'chapter-label': ''
+//    attributes 'sectnums': true
+//    attributes 'sectanchors': true
+//    attributes 'sectlinks': true
+//    attributes 'experimental': true
 
 }
 
@@ -73,7 +73,7 @@ asciidoctor {
     logDocuments true
 
     sources {
-        include 'index.adoc'
+        include 'example.adoc'
     }
     baseDirFollowsSourceDir()
 
@@ -87,7 +87,7 @@ asciidoctor {
 //     attributes 'linkcss': true
 //     attributes 'stylesdir': 'css/'
 //     attributes 'stylesheet': 'asciidoctor.css'
-    attributes 'docinfo1': ''
+//    attributes 'docinfo1': ''
 
 }
 
@@ -109,7 +109,7 @@ asciidoctorPdf {
    logDocuments true
 
     sources {
-        include 'index.adoc'
+        include 'example.adoc'
     }
     baseDirFollowsSourceDir()
 
